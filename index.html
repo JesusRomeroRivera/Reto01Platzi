@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platzi Diary</title>
+    <link rel="stylesheet" href="./src/styles/styles.css">
+    <link rel="Icon" href="./assets/PlatziIcon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main id="app">
+        <header class="Header">
+            <img class="Header--image" src="./assets/PlatziIcon.png" alt="PlatziIcon">
+            <h1 class="Header--title">Mi agenda en Platzi</h1>
+        </header>
+        <section class="Form">
+            <input class="Form--text" type="text" placeholder="Título del curso"
+            v-model="title">
+            <input class="Form--hours" type="number" placeholder="Horas"
+                v-model="hours">
+            <button type="button" class="Form--button" 
+                v-on:click="addCourse">
+                +
+            </button>
+        </section>
+        <section class="Data">
+            <p class="Data--text" v-if="courses == 0">Aún no has realizado ningún curso</p>
+            <div class="Data--content"
+                v-else>
+                <h3 class="Data--title">Lista de cursos</h3>
+                <div class="Data--container">
+                    <ul v-for="c in courses" class="Data--courses">
+                        <li class="Data--element">
+                            {{ c.title }}, con {{ c.hours }} horas
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="Data--totalHours">Llevo <strong>{{ countTotalHours }} horas</strong> aprendiendo en Platzi <strong>#NuncaParesDeAprender</strong></h3>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="./src/index.js"></script>
+</body>
+</html>

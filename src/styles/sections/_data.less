@@ -1,0 +1,31 @@
+.Data{
+    height: 100%;
+    border-radius: 15px;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 10px 10px 20px -16px #000000;
+    font-family: @principal-font;
+    .Data--text{
+        font-size: 1.6rem;    
+        text-align: center;
+    }
+    .Data--content{
+        .Data--title{
+            font-size: 2rem;
+        }
+        .Data--container{
+            overflow-y: auto;
+            max-height: 45vh;
+            .Data--courses{
+                .Data--element{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .Data--totalHours{
+            font-weight: lighter;
+            font-size: 1.4rem;
+        }
+    }
+}
